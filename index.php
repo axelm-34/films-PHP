@@ -10,7 +10,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// --- MOVIE ROUTES ---
+// MOVIE ROUTES
 if (str_starts_with($path, '/movies')) {
     $type = $_GET['type'] ?? 'popular';
     $page = $_GET['page'] ?? 1;
@@ -19,7 +19,7 @@ if (str_starts_with($path, '/movies')) {
     exit;
 }
 
-// --- FAVORITES ROUTES ---
+// FAVORITES ROUTES
 if (str_starts_with($path, '/favorites/add')) {
     $movieId = $_GET['id'] ?? null;
     FavoritesController::add($movieId);
@@ -31,6 +31,6 @@ if (str_starts_with($path, '/favorites/list')) {
     exit;
 }
 
-// --- 404 ---
+// ERROR 404
 http_response_code(404);
 echo json_encode(["error" => "Route inconnue"]);
