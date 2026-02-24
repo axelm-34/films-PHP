@@ -32,17 +32,6 @@ if (str_starts_with($path, '/movies')) {
     exit;
 }
 
-<<<<<<< HEAD
-// --- FAVORITES ROUTES ---
-if (str_starts_with($path, '/favorites')) {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $data = json_decode(file_get_contents('php://input'), true);
-        $movieId = $data['id'] ?? null;
-        FavoritesController::add($movieId);
-    } else {
-        FavoritesController::list();
-    }
-=======
 // FAVORITES ROUTES
 if (str_starts_with($path, '/favorites/add')) {
     $movieId = $_GET['id'] ?? null;
@@ -52,7 +41,6 @@ if (str_starts_with($path, '/favorites/add')) {
 
 if (str_starts_with($path, '/favorites/list')) {
     FavoritesController::list();
->>>>>>> test
     exit;
 }
 
