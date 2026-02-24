@@ -168,7 +168,7 @@
             if (movie) {
                 document.getElementById('modal-title').innerText = movie.title;
                 document.getElementById('modal-desc').innerText = movie.overview || "Aucun synopsis disponible.";
-                document.getElementById('modal-rating').innerText = `⭐ ${Math.round(movie.vote_average * 10) / 10}/10`;
+                document.getElementById('modal-rating').innerText = ` ${Math.round(movie.vote_average * 10) / 10}/10`;
                 document.getElementById('modal-date').innerText = `Sortie : ${movie.release_date}`;
                 const posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'https://via.placeholder.com/500x750?text=Pas+d\'affiche';
                 document.getElementById('modal-img').src = posterUrl;
