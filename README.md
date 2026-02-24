@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-membres du projet : 
-Pablo Lancel
+Membres du projet : 
+Pablo Lancel - Axel Macé
 
 Si vous utilisez une installation PHP brute sous Windows, suivez ces étapes :
 1. Allez dans le dossier d'installation de votre PHP.
@@ -9,24 +8,9 @@ Si vous utilisez une installation PHP brute sous Windows, suivez ces étapes :
    extension_dir = "ext"
    extension=openssl
 
-
-Urls :
-
-List movies:
-http://localhost:8000/movies?type=popular&page=1
-
-Add a favorite:
-http://localhost:8000/favorites/add?id=
-
-List favorites:
-=======
-PREREQUIS :
-- Version de PHP >= 8 installé
-- Pourvoir lancer un serveur en local avec "php -S"
-- VScode
-
 LANCEMENT DE L'API (raw):
 Pour que l'api du site soit active, dans le terminal éxécuter cette commande :
+
 php -S localhost:8000
 
 Si le message afficher après exécution de la commande, ressemble a celui-ci :
@@ -36,8 +20,8 @@ Si le message afficher après exécution de la commande, ressemble a celui-ci :
 Alors le serveur local est bien actif.
 
 LANCEMENT DE L'AFFICHAGE GRAPHIQUE :
-1/ Faire "LANCEMENT DE L'API"
-2/ Dans le dossier "site", ouvrir "index.html"
+1. Faire "LANCEMENT DE L'API"
+2. Dans le dossier "site", ouvrir "index.html"
 
 
 Urls pour l'API (raw):
@@ -49,5 +33,4 @@ Ajouter un film au favories:
 http://localhost:8000/favorites/add?id= (mettre ID du film après le =)
 
 Liste des favories:
->>>>>>> test
 http://localhost:8000/favorites/list
