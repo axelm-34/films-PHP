@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// --- MOVIE ROUTES ---
+// MOVIE ROUTES
 if (str_starts_with($path, '/movies')) {
     $type = $_GET['type'] ?? 'popular';
     $page = $_GET['page'] ?? 1;
@@ -32,6 +32,7 @@ if (str_starts_with($path, '/movies')) {
     exit;
 }
 
+<<<<<<< HEAD
 // --- FAVORITES ROUTES ---
 if (str_starts_with($path, '/favorites')) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -41,9 +42,20 @@ if (str_starts_with($path, '/favorites')) {
     } else {
         FavoritesController::list();
     }
+=======
+// FAVORITES ROUTES
+if (str_starts_with($path, '/favorites/add')) {
+    $movieId = $_GET['id'] ?? null;
+    FavoritesController::add($movieId);
     exit;
 }
 
-// --- 404 ---
+if (str_starts_with($path, '/favorites/list')) {
+    FavoritesController::list();
+>>>>>>> test
+    exit;
+}
+
+// ERROR 404
 http_response_code(404);
 echo json_encode(["error" => "Route inconnue"]);

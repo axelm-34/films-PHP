@@ -6,7 +6,7 @@ class FavoritesController {
 
     private static $file = __DIR__ . '/../favorites.json';
 
-    public static function list() {
+    public static function list() { // Affiche la list des films mis en favoris
         if (!file_exists(self::$file)) {
             file_put_contents(self::$file, "[]");
         }
@@ -24,7 +24,7 @@ class FavoritesController {
         echo json_encode($fullMovies);
     }
 
-    public static function add($movieId) {
+    public static function add($movieId) { // Ajoute un films dans la list des favories
         if (!$movieId) {
             http_response_code(400);
             echo json_encode(["error" => "ID manquant"]);
